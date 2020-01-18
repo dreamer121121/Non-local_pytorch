@@ -16,7 +16,7 @@ class Network(nn.Module):
             nn.MaxPool2d(2),
         )
 
-        self.nl_1 = NONLocalBlock2D(in_channels=32)
+        self.nl_1 = NONLocalBlock2D(in_channels=32)     #x与残差相加的过程被写在NONLocal模块中。
         self.conv_2 = nn.Sequential(
             nn.Conv2d(in_channels=32, out_channels=64, kernel_size=3, stride=1, padding=1),
             nn.BatchNorm2d(64),
